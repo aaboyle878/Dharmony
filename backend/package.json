@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@blockfrost/blockfrost-js": "^2.0.0",
+    "@meshsdk/core": "^1.9.0-beta.62",
+    "@meshsdk/react": "^1.9.0-beta.62",
+    "bech32": "github:bitcoinjs/bech32",
+    "bech32-buffer": "^0.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "pg": "^8.11.3"
+  }
+}

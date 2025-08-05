@@ -1,0 +1,67 @@
+@import "@fontsource/inter"; /* Inter font from npm */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global body styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #1a0b2e;
+    background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.4), transparent 50%),
+                      radial-gradient(circle at bottom left, rgba(49, 130, 206, 0.3), transparent 60%);
+    background-attachment: fixed;
+    /* Ensure text color is set for readability on the dark background */
+    color: #ffffff; 
+}
+
+.font-bungee { 
+    font-family: 'Bungee', cursive; 
+}
+
+.btn-game { 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.btn-game:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
+}
+
+.btn-answer { 
+    background-color: rgba(255, 255, 255, 0.05); 
+    border: 2px solid rgba(255, 255, 255, 0.3); 
+    transition: all 0.2s ease; 
+}
+
+.btn-answer:hover { 
+    background-color: rgba(255, 255, 255, 0.15); 
+    border-color: #38bdf8; 
+}
+
+.btn-answer.btn-selected { 
+    background-color: rgba(56, 189, 248, 0.2) !important; 
+    border-color: #38bdf8 !important; 
+}
+
+.fade-in { 
+    animation: fadeInAnimation 0.4s ease-in-out forwards; 
+}
+
+@keyframes fadeInAnimation { 
+    from { opacity: 0; transform: translateY(15px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* Note: The .hidden class is a utility. If you're not using Tailwind, 
+   you might need to define it yourself: .hidden { display: none; } */
+
+.code-block {
+    background-color: #0d0618;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}

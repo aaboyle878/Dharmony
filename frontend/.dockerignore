@@ -1,0 +1,14 @@
+node_modules
+.git
+*.log
+dist
+.vscode
+*.sqlite
+*.zip
+*.tar.gz
+*.tgz
+coverage
+build
+.cache
+.DS_Store
+.env

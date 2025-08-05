@@ -1,0 +1,33 @@
+services:
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: surveyuser
+      POSTGRES_PASSWORD: surveypass
+      POSTGRES_DB: surveydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgres://surveyuser:surveypass@db:5432/surveydb
+      GOVTOOL_URL : https://be.gov.tools
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_GOVTOOL_URL : https://gov.tools
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
